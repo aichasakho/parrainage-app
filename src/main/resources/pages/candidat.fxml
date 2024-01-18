@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #FFF0F5;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sn.dev.parrainageapp.controllers.CandidatController">
+    <children>
+        <MenuBar layoutY="-1.0" prefHeight="36.0" prefWidth="806.0" style="-fx-background-color: #8A2BE2;">
+            <menus>
+                <Menu mnemonicParsing="false" text="Actions">
+                    <items>
+                        <MenuItem fx:id="menuCandidatLogout" mnemonicParsing="false" onAction="#logout" text="Se Deconnecter" />
+                        <MenuItem fx:id="menuCandidatClose" mnemonicParsing="false" onAction="#close" text="Quitter" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <TableView fx:id="ElectTbview" layoutX="17.0" layoutY="118.0" prefHeight="317.0" prefWidth="772.0" style="-fx-background-color: #fff;">
+            <columns>
+                <TableColumn fx:id="colProfil" prefWidth="129.0" text="Profil" />
+                <TableColumn fx:id="colNom" prefWidth="190.0" text="Nom" />
+                <TableColumn fx:id="colPrenom" prefWidth="231.0" text="Prenom" />
+                <TableColumn fx:id="colStatus" minWidth="0.0" prefWidth="173.0" text="Status" />
+                <TableColumn fx:id="colId" prefWidth="48.0" text="Id" visible="false" />
+            </columns>
+        </TableView>
+        <Label layoutX="315.0" layoutY="37.0" text="CANDIDAT" textFill="#680589" underline="true">
+            <font>
+                <Font name="System Bold" size="25.0" />
+            </font>
+        </Label>
+        <Label layoutX="17.0" layoutY="87.0" text="Liste des parrains Electeurs" textFill="#680589">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+      <HBox layoutX="16.0" layoutY="35.0" prefHeight="41.0" prefWidth="249.0" spacing="10.0">
+         <children>
+              <Label text="Bienvenu ! " textFill="#680589">
+                  <font>
+                      <Font name="System Bold" size="15.0" />
+                  </font>
+              </Label>
+            <Label fx:id="labelCandName" text="Nom" textFill="#680589">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox layoutX="16.0" layoutY="445.0" prefHeight="41.0" prefWidth="249.0" spacing="10.0">
+         <children>
+            <Label text="Nombre Total de parrains :" textFill="#680589">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelElectCount" text="0" textFill="#680589">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+    </children>
+</AnchorPane>

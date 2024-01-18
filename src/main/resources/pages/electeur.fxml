@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="497.0" prefWidth="700.0" style="-fx-background-color: #FFF0F5;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sn.dev.parrainageapp.controllers.ElecteurController">
+   <children>
+      <MenuBar layoutY="-7.0" prefHeight="36.0" prefWidth="700.0" style="-fx-background-color: #8A2BE2;">
+        <menus>
+          <Menu mnemonicParsing="false" text="Actions">
+            <items>
+                  <MenuItem fx:id="menuElecteurLogout" mnemonicParsing="false" onAction="#logout" text="Se Deconnecter" />
+                  <MenuItem fx:id="menuElecteurClose" mnemonicParsing="false" onAction="#close" text="Quitter" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TableView fx:id="candTbview" layoutX="14.0" layoutY="117.0" onMouseClicked="#getCandSelected" prefHeight="250.0" prefWidth="495.0" style="-fx-background-color: #fff;">
+        <columns>
+            <TableColumn fx:id="colProfil" prefWidth="120.0" text="Profil" />
+          <TableColumn fx:id="colNom" prefWidth="111.0" text="Nom" />
+          <TableColumn fx:id="colPrenom" prefWidth="112.0" text="Prenom" />
+            <TableColumn fx:id="colStatus" minWidth="0.0" prefWidth="116.0" text="Status" />
+            <TableColumn fx:id="colId" prefWidth="187.0" text="Id" visible="false" />
+        </columns>
+      </TableView>
+      <TableView fx:id="parTbView" layoutX="14.0" layoutY="412.0" prefHeight="58.0" prefWidth="495.0" style="-fx-background-color: #fff;">
+        <columns>
+          <TableColumn fx:id="parColProfil" prefWidth="119.0" text="Profil" />
+          <TableColumn fx:id="parColNom" prefWidth="109.0" text="Nom" />
+            <TableColumn fx:id="parColPrenom" minWidth="0.0" prefWidth="136.0" text="Prenom" />
+            <TableColumn fx:id="parColStatus" prefWidth="113.0" text="Status" />
+            <TableColumn fx:id="parColId" minWidth="4.0" prefWidth="17.0" text="Id" visible="false" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnParrainer" layoutX="540.0" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#doParrainage" prefHeight="25.0" prefWidth="141.0" style="-fx-background-color: #fff;" text="Parrainer" textFill="#680589" />
+      <Label layoutX="270.0" layoutY="38.0" text="PARRAINAGE" textFill="#680589" underline="true">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="91.0" text="Liste des Candidats" textFill="#680589">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="387.0" text="Candidat Parrainer" textFill="#680589">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <HBox layoutX="518.0" layoutY="46.0" prefHeight="27.0" prefWidth="172.0" spacing="3.0">
+         <children>
+            <Label fx:id="GreetingLabel1" prefHeight="17.0" prefWidth="122.0" text="Bienvenue !" textFill="#680589" />
+            <Label fx:id="GreetingLabel" prefHeight="17.0" prefWidth="152.0" text="Nom" textFill="#680589" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>
